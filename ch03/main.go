@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"jvm-in-go/ch02/classpath"
+	"jvm-in-go/ch03/classpath"
 	"strings"
 )
 

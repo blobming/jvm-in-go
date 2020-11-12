@@ -12,3 +12,15 @@ In Chapter02 I defined several types of class file: *.class, *.jar, *.zip, /* wi
 - entry_dir: store the absolute path
 + entry_wildcard: treat the /* case
 - entry_zip: deal with the jar and zip file
+
+In classpath.go I get initilize 
++ bootClasspath Entry
+- extClasspath  Entry
++ userClasspath Entry
+by passing the -Xjre option and -cp Option. To be specific, -Xjre option points to where the bootstrap and extension class locate and -cp Option points to where the user defined class locat (by default it is ".")
+### Usage
+``` bash
+Usage: ch02 [-options] class [args...]
+```
+
+## Chapter03
