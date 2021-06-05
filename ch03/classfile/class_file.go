@@ -80,3 +80,18 @@ func (cf *ClassFile) readAndCheckMagic(reader *ClassReader) {
 		panic("java.lang.ClassFormatError: magic!")
 	}
 }
+
+//readAndCheckVersion check if the class file belongs to the supported version
+func (cf *ClassFile) readAndCheckVersion(reader *ClassReader) {
+	cf.minorVersion = reader.readUint16()
+	cf.majorVersion = reader.readUint16()
+	switch cf.majorVersion {
+	case 45:
+		return
+	case 46, 47, 48, 49, 50, 51, 52:
+		if self.minorVersion == 0 {
+			return
+		}
+	}
+	panic("java.lang.UnsupportedClassVersionError!")
+}
